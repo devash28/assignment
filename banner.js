@@ -1,7 +1,7 @@
 (function() {
     const apiUrl = "http://localhost/assignment/banner.php";
 
-    // Get script tag attributes
+ 
     const scriptTag = document.currentScript;
     const width = scriptTag.getAttribute("data-width") || "300px";
     const height = scriptTag.getAttribute("data-height") || "250px";
@@ -15,7 +15,7 @@
                 return;
             }
 
-            // Create banner container
+    
             const banner = document.createElement("div");
             banner.style.cssText = `
                 position: fixed;
@@ -28,7 +28,7 @@
                 transition: transform 0.3s ease-in-out;
             `;
 
-            // Set position styles
+
             const positions = {
                 "bottom-right": { bottom: "10px", right: "10px" },
                 "bottom-left": { bottom: "10px", left: "10px" },
@@ -38,7 +38,7 @@
 
             Object.assign(banner.style, positions[data.position] || positions["bottom-right"]);
 
-            // Create clickable link
+      
             const link = document.createElement("a");
             link.href = data.link;
             link.target = "_blank";
@@ -46,7 +46,7 @@
             link.style.width = "100%";
             link.style.height = "100%";
 
-            // Create image element
+            
             const img = document.createElement("img");
             img.src = data.image;
             img.alt = data.alt;
@@ -56,7 +56,7 @@
                 object-fit: cover;
             `;
 
-            // Create close button
+        
             const closeButton = document.createElement("span");
             closeButton.innerHTML = "&times;";
             closeButton.style.cssText = `
@@ -90,7 +90,7 @@
                 setTimeout(() => banner.remove(), 300);
             });
 
-            // Assemble elements
+          
             link.appendChild(img);
             banner.appendChild(link);
             banner.appendChild(closeButton);
